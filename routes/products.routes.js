@@ -15,10 +15,15 @@ router
   .patch(productControllers.bulkUpdateProduct);
 
 router
+  .route("/bulk-delete")
+  /** */
+  .delete(productControllers.bulkDeleteProduct);
+router
   .route("/:id")
   /** */
   .get()
-  .post(productControllers.updateProduct)
-  .patch();
+  .post(productControllers.updateProductById)
+  .patch()
+  .delete(productControllers.deleteProductById);
 
 module.exports = router;
